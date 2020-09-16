@@ -1,0 +1,7 @@
+{
+  "name": "Imap2",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "angular"
+}

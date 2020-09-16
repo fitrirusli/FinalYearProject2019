@@ -1,0 +1,59 @@
+<ion-header>
+  <ion-toolbar color='success'>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>Musafir Verification <ion-icon name="airplane"></ion-icon></ion-title>
+    
+  </ion-toolbar>
+
+</ion-header>
+
+<ion-content  >
+  <form  #form="ngForm" (ngSubmit)="logForm()">
+    <ion-grid>
+      <ion-row color="primary" justify-content-center>
+        <ion-col align-self-center size-md="6" size-lg="5" size-xs="12">
+          <div text-center>
+            <ion-card>
+              <ion-card-header>
+                <ion-card-title>Musafir Verification</ion-card-title>
+                
+                
+              </ion-card-header>
+              
+                <ion-card-content text-center>
+                  <ion-text color="dark">
+                    <h2>  Check Your travelling distance accurately by clicking "Check Distance" button and enter the value in the text box below</h2>
+                  </ion-text>
+                  
+                  </ion-card-content>
+                </ion-card>
+                
+           
+          </div>
+          <div padding>
+            <ion-item>
+              <ion-input  name="etd" type="number" placeholder="Travelling distance(KM)" [(ngModel)]="etd" clearInput value="clear me"></ion-input>
+            </ion-item>
+            <ion-item>
+              <ion-input name="dos" type="number" placeholder="Duration of staying(days)" [(ngModel)]="dos" clearInput value="clear me"></ion-input>
+            </ion-item>
+          </div>
+          <div padding>
+            <ion-button  size="medium" type="submit" [disabled]="form.invalid" expand="block">Submit</ion-button>
+          </div>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </form>
+
+  <div text-center>
+    <ion-button  align-self-center justify-content-center size="medium"  color="warning" (click)="profile()">Check distance</ion-button>
+  </div>
+
+ 
+
+  
+  
+</ion-content>

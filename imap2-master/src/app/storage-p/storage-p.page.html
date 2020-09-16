@@ -1,0 +1,121 @@
+<ion-header>
+  <ion-toolbar color="success">
+    <ion-title>Prayer Times Countries </ion-title>
+    <ion-icon (click)="backD()" slot="start" name="arrow-round-back"></ion-icon>
+    <ion-icon (click)="backagainn()" slot="start" name="arrow-round-forward"></ion-icon>
+
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+
+  <div class ="bg-class">
+
+    <ion-item >
+      <ion-label>Select Country</ion-label>
+     <ion-select [(ngModel)]="city"  (ionChange)="getCity(city)">
+       <ion-select-option value="shanghai" selected="true">Shanghai,China</ion-select-option>
+       <ion-select-option value="beijing" >Beijing,China</ion-select-option>
+       
+       <ion-select-option value="guangzhou">Guangzhou,China</ion-select-option>
+       <ion-select-option value="shenzhen">Shenzhen,China</ion-select-option>
+       <ion-select-option value="chongqing">Chongqing,China</ion-select-option>
+       <ion-select-option value="dongguan">Dongguan,China</ion-select-option>
+       <ion-select-option value="tianjin">Tianjin,China</ion-select-option>
+       <ion-select-option value="chengdu-cn">Chengdu, China</ion-select-option>
+       <ion-select-option value="istanbul">Istanbul, Turkey</ion-select-option>
+       <ion-select-option value="buenos-aires">Buenos Aires,Argentina</ion-select-option>
+       <ion-select-option value="mumbai">Mumbai,India</ion-select-option>
+       <ion-select-option value="delhi">Delhi,India</ion-select-option>
+       <ion-select-option value="mexico-city">Mexico</ion-select-option>
+       <ion-select-option value="karachi">Karachi,Pakistan</ion-select-option>
+       <ion-select-option value="moscow">Moscow,Russia</ion-select-option> 
+       <ion-select-option value="dhaka-bd-bd-493">Dhaka,Bangladesh</ion-select-option>
+       <ion-select-option value="seoul">Seoul,South Korea</ion-select-option>
+       <ion-select-option value="sao-paulo">Sao-paulo,Brazil</ion-select-option>
+       <ion-select-option value="lagos-11021">Lagos,Nigeria</ion-select-option>
+       <ion-select-option value="jakarta">Jakarta,Indonesia</ion-select-option>
+       <ion-select-option value="tokyo">Tokyo,Japan</ion-select-option>
+       <ion-select-option value="new-york">New York,US</ion-select-option>
+       <ion-select-option value="taipei">Taipei,Taiwan</ion-select-option>
+       <ion-select-option value="kinshasa">Kinshasa,Congo</ion-select-option>
+       <ion-select-option value="lima">Lima,peru</ion-select-option>
+       <ion-select-option value="cairo">Cairo,Egypt</ion-select-option>
+       <ion-select-option value="bogota-co">Bogota,Columbia</ion-select-option>
+       <ion-select-option value="london">London,UK</ion-select-option>
+       <ion-select-option value="baghdad">Baghdad,Iraq</ion-select-option>
+       
+       
+       
+       
+ 
+  </ion-select>
+    
+    </ion-item>
+
+  
+   <div class="ion-text-center">
+     <h3 > Prayer Time in {{city}} {{country}}  {{country_code}}</h3>
+     
+     <h3> Today {{day}} {{formattedDate}} </h3>
+   </div>
+    
+   <div class=" ion-text-center">
+ 
+    <!--this is for card display subuh -->
+    <ion-grid>
+        <ion-col class="ion-no-padding">
+         <ion-card class="cardHolder">
+           <ion-card-content style="font-size :20px" class="fixline">
+            <ion-label> Fajr  {{Fajr}} AM </ion-label> 
+             
+           </ion-card-content>
+         </ion-card >
+       
+
+           <!--this is for card display zohor -->
+         <ion-card class="cardHolder">
+            <ion-card-content style="font-size :20px" class="fixline">
+            Zohor {{Dhuhr}} PM
+            </ion-card-content>
+          </ion-card>
+
+           <!--this is for card display asar -->
+         <ion-card class="cardHolder">
+            <ion-card-content  style="font-size :20px" class="fixline">
+              Asar {{Asr}} PM
+            </ion-card-content>
+          </ion-card>
+
+           <!--this is for card display maghrib -->
+         <ion-card class="cardHolder">
+            <ion-card-content style="font-size :20px" class="fixline">
+             Maghrib {{Maghrib}} PM
+            </ion-card-content>
+          </ion-card>
+
+
+           <!--this is for card display isyak -->
+         <ion-card class="cardHolder">
+            <ion-card-content style="font-size :20px" class="fixline">
+             Isyak {{Isha}} PM
+            </ion-card-content>
+            <ion-card-title text-center>Powered by Prayer Time API</ion-card-title>
+
+          </ion-card>
+
+         </ion-col>
+        
+        </ion-grid>
+
+       <!-- <ion-col>
+          <ion-button (click)="saveData()" color="success" shape="small" >Save PrayerTime</ion-button>
+      </ion-col>  -->
+               
+             
+   </div>
+
+ 
+
+</div>
+</ion-content>

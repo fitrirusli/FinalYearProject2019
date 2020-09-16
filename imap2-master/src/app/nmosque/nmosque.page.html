@@ -1,0 +1,76 @@
+<ion-header>
+    <ion-toolbar color="success">
+      
+      <ion-searchbar [(ngModel)]="autocomplete.input" (ionInput)="updateSearchResults()" placeholder="Find Mosque" showCancelButton="always"></ion-searchbar>
+      <!-- <ion-icon (click)="backD()" slot="start" name="arrow-round-back"></ion-icon> -->
+    </ion-toolbar>
+    <ion-card>
+
+      <ion-card-content>
+         INSTRUCTION : Enter location name to search nearby mosque within that particular place and select location from list. 
+        </ion-card-content>
+        <ion-card-title text-center>Powered by Google Map Places</ion-card-title>
+  </ion-card>
+  </ion-header>
+
+  <ion-content>
+    
+     
+
+      <ion-list [hidden]="autocompleteItems.length == 0">
+        <ion-item *ngFor="let item of autocompleteItems" tappable (click)="selectSearchResult(item)">
+          {{ item.description }}
+        </ion-item>
+      </ion-list>
+      <ion-grid *ngIf="nearbyItems.length == 0">
+        <ion-row>
+          <ion-col col-12>
+             
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+      <!-- <ion-list *ngIf="nearbyItems.length > 0">
+        <ion-item *ngFor="let place of nearbyItems">
+            <ion-grid>
+              <ion-row class='align-items-center'>
+                <ion-col>
+                    Place Name : <b>{{place.name}}</b>
+                </ion-col>
+                <ion-col> </ion-col>
+                <ion-col>
+                    Address : {{place.vicinity}}
+                </ion-col>
+              <ion-col> </ion-col>
+                <ion-col>
+                    Rating : <b>{{place.destinations}}</b>
+                </ion-col>
+                <ion-col>
+                    <ion-button *ngIf="(place.opening_hours && !place.opening_hours.open_now)" size="small" color="danger" shape="round" >CLOSED</ion-button>
+                    <ion-button  *ngIf="(place.opening_hours && place.opening_hours.open_now)" size="small" color="success" shape="round" >OPEN NOW</ion-button>
+                </ion-col>
+              </ion-row>
+              </ion-grid>
+        </ion-item>
+      </ion-list> -->
+      <!-- <ion-refresher slot="fixed" (ionRefresh)="doRefresh($event)">
+        <ion-refresher-content> -->
+  
+        <ion-list *ngIf="nearbyItems.length > 0">
+            <ion-item *ngFor="let place of nearbyItems">
+              <ion-col>
+                  <ion-card color="tertiary">
+                      <ion-card-content >
+                          <ion-label>Place Name : {{place.name}}</ion-label>
+                          <ion-label>Address: {{place.vicinity}}</ion-label>
+                          <ion-label>Rating: {{place.rating}}</ion-label>
+                          <ion-button *ngIf="(place.opening_hours && !place.opening_hours.open_now)" size="small" color="danger" shape="round" >CLOSE</ion-button>
+                           <ion-button  *ngIf="(place.opening_hours && place.opening_hours.open_now)" size="small" color="success" shape="round" >OPEN</ion-button>
+                        </ion-card-content>
+                  </ion-card>     
+            </ion-col>
+            </ion-item>
+          </ion-list>
+    <!-- </ion-refresher-content>
+      </ion-refresher>
+     -->
+    </ion-content> 
